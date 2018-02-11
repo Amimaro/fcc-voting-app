@@ -1,6 +1,23 @@
 const Facade = require('../../lib/facade');
-const foodSchema = require('./schema');
+const pollSchema = require('./schema');
+const dateTime = require('node-datetime');
 
-class FoodFacade extends Facade {}
+class PollFacade extends Facade {
 
-module.exports = new FoodFacade(foodSchema);
+  create(body) {
+
+    let dt = dateTime.create();
+    let formatted = dt.format('Y-m-d H:M:S');
+    body.created_at = formatted;
+
+    body.votes = [];
+    for(let option of body.options)
+      body.votes.push(0);
+
+    const model = new this.model(body);
+    return model.save();
+  }
+
+}
+
+module.exports = new PollFacade(pollSchema);
