@@ -1,0 +1,68 @@
+<section class="hero is-primary">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item" [routerLink]="['/']">
+              Home
+            </a>
+            <a class="navbar-item" [routerLink]="['/newpoll']" *ngIf="appService.isLoggedIn">
+              <span class="icon">
+                <i class="fa fa-plus"></i>
+              </span>
+              <span>Create New Poll</span>
+            </a>
+            <a class="navbar-item" [routerLink]="['/profile']" *ngIf="appService.isLoggedIn">
+              Profile
+            </a>
+            <a class="navbar-item" (click)="logout()" *ngIf="appService.isLoggedIn">
+              Logout
+            </a>
+            <a class="navbar-item" (click)="loginGithub()" *ngIf="!appService.isLoggedIn">
+              <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span>Sign in with Github</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        fcc-voting-app
+      </h1>
+      <h2 class="subtitle">
+        FreeCodeCamp - Build a Voting App
+      </h2>
+      <h2 class="subtitle">
+        by <a href="http://github.com/amimaro" target="_blank">Amimaro</a>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>fcc-voting-app</strong>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+      </p>
+    </div>
+  </div>
+</footer>

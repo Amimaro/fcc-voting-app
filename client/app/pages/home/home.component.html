@@ -1,0 +1,21 @@
+<h3 class="subtitle has-text-centered" style="padding-top: 20px">
+  <p>Below are polls hosted by fcc-voting-app.</p>
+  <p>Select a poll to see the results and vote, or sign-in to make a new poll.</p>
+</h3>
+
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Poll Name</th>
+      <th>Created at</th>
+      <th>By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let poll of appService.polls">
+      <th>{{poll.name}}</th>
+      <td>{{poll.created}}</td>
+      <td>{{poll.user}}</td>
+    </tr>
+  </tbody>
+</table>

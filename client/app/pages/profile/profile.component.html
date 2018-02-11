@@ -1,0 +1,20 @@
+<div style="width: 60%; margin: 0 auto; padding-bottom: 20px" align="center" *ngIf="user">
+  <h1 class="title" style="padding-top: 40px">
+    Profile
+  </h1>
+  <div class="box" *ngIf="user.github">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <p class="subtitle">Github Login</p>
+          <p><strong>Id:</strong> {{ user._id }}</p>
+          <p><strong>Github Id:</strong> {{ user.github.id }}</p>
+          <p><strong>Name:</strong> {{ user.github.username }}</p>
+          <p><strong>Display Name:</strong> {{ user.github.displayName }}</p>
+          <p><strong>Email:</strong> {{ user.github.email }}</p>
+          <p><strong>Public Repos:</strong> {{ user.github.publicRepos }}</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
