@@ -80,7 +80,7 @@ export class PollComponent implements OnInit {
   }
 
   share() {
-    let appUrl = 'http://localhost:8080'
+    let appUrl = 'https://fcc-buildvote-app.herokuapp.com/'
     let url = 'https://twitter.com/intent/tweet?url=' + appUrl + '&text=amimaro%20%7C%20FreeCodeCamp%20-%20fcc-voting-app&original_referer=' + appUrl;
     window.open(url, 'mywin',
       'left=20,top=20,width=500,height=250,toolbar=0,resizable=0');
