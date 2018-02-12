@@ -17,6 +17,13 @@ class PollFacade extends Facade {
     return model.save();
   }
 
+  find(...args) {
+    return this.model
+      .find(...args)
+      .populate('_creator', 'github.username')
+      .exec();
+  }
+
 }
 
 module.exports = new PollFacade(pollSchema);
