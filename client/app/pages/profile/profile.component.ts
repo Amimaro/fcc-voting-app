@@ -11,7 +11,7 @@ export class ProfileComponent implements OnInit {
 
   user: any;
 
-  constructor(private appService: AppService) {
+  constructor(public appService: AppService) {
     this.appService.getSession().subscribe(
       res => {
         console.log(res);

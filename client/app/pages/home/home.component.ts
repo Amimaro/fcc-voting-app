@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   user: any = {};
 
-  constructor(private appService: AppService) {
+  constructor(public appService: AppService) {
     this.appService.getPolls();
     this.appService.getSession().subscribe(
       res => {

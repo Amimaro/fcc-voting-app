@@ -16,7 +16,7 @@ export class PollComponent implements OnInit {
   poll: any = {};
   option: any;
 
-  constructor(private appService: AppService, private route: ActivatedRoute) { }
+  constructor(public appService: AppService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {

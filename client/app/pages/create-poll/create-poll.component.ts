@@ -12,7 +12,7 @@ export class CreatePollComponent implements OnInit {
   option: string = "";
   form: any = {};
 
-  constructor(private appService: AppService) {
+  constructor(public appService: AppService) {
     this.form.name = "";
     this.form.options = [];
   }

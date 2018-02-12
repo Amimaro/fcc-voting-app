@@ -11,7 +11,7 @@ export class AppComponent {
 
   title = 'app';
 
-  constructor(private appService: AppService) { }
+  constructor(public appService: AppService) { }
 
   login() {
     this.appService.login();
