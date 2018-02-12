@@ -1,56 +1,60 @@
-<h3 class="subtitle" style="padding-top: 20px">Create New Poll</h3>
-<div align="center">
-  <div class="box" style="width: 50%">
-    <article class="media">
-      <div class="media-content">
-        <div class="content">
-          <div class="field">
-            <label class="label">Name</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Poll name" [(ngModel)]="form.name">
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Options</label>
-            <div class="field has-addons">
+<div style="width: 60%; margin: 0 auto; padding-bottom: 20px" align="center">
+  <h1 class="title" style="padding-top: 40px">
+    Create New Poll
+  </h1>
+  <div align="center">
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <div class="field">
+              <label class="label">Name</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Poll option" [(ngModel)]="option" (keyup.enter)="addOption()">
+                <input class="input" type="text" placeholder="Poll name" [(ngModel)]="form.name">
               </div>
-              <div class="control">
-                <a class="button is-success" (click)="addOption()">
+            </div>
+            <div class="field">
+              <label class="label">Options</label>
+              <div class="field has-addons">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Poll option" [(ngModel)]="option" (keyup.enter)="addOption()">
+                </div>
+                <div class="control">
+                  <a class="button is-success" (click)="addOption()">
                   <span class="icon"><i class="fa fa-plus"></i></span>
                   <span>Add</span>
                 </a>
+                </div>
+              </div>
+            </div>
+            <div class="field" *ngIf="form.options.length > 0">
+              <label class="label">Added Options</label>
+              <table class="table">
+                <tbody>
+                  <tr *ngFor="let option of form.options; let i = index">
+                    <td class="has-text-centered">
+                      <p>{{option}}</p>
+                    </td>
+                    <td class="has-text-centered">
+                      <p>
+                        <span class="icon">
+                        <i class="fa fa-times" style="color: red" (click)="removeOption(i)"></i>
+                      </span>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <br>
+            <div class="field is-grouped pull-right">
+              <div class="control">
+                <button class="button is-link" (click)="createPoll()">Submit</button>
               </div>
             </div>
           </div>
-          <div class="field" *ngIf="form.options.length > 0">
-            <label class="label">Added Options</label>
-            <table class="table">
-              <tbody>
-                <tr *ngFor="let option of form.options; let i = index">
-                  <td class="has-text-centered">
-                    <p>{{option}}</p>
-                  </td>
-                  <td class="has-text-centered">
-                    <p>
-                      <span class="icon">
-                        <i class="fa fa-times" style="color: red" (click)="removeOption(i)"></i>
-                      </span>
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <br>
-          <div class="field is-grouped pull-right">
-            <div class="control">
-              <button class="button is-link" (click)="createPoll()">Submit</button>
-            </div>
-          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   </div>
 </div>
