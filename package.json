@@ -8,10 +8,12 @@
     "ng": "ng",
     "client": "ng serve -o",
     "build": "ng build --prod",
+    "postinstall": "ng build -aot --prod",
     "watch": "ng build --watch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "start": "node server/index.js",
     "server": "node index.js",
     "server:dev": "nodemon --watch server server/index.js",
     "dev": "concurrently \"npm run watch\" \"gulp\""
