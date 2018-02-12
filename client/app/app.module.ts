@@ -11,7 +11,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AppService } from './services/app.service';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CreatePollComponent } from './pages/create-poll/create-poll.component';
-import { VoteComponent } from './vote/vote.component';
+import { PollComponent } from './pages/poll/poll.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +26,10 @@ const appRoutes: Routes = [
     path: 'newpoll',
     component: CreatePollComponent
   },
+  {
+    path: 'poll/:id',
+    component: PollComponent
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -36,7 +40,7 @@ const appRoutes: Routes = [
     NotFoundComponent,
     ProfileComponent,
     CreatePollComponent,
-    VoteComponent
+    PollComponent
   ],
   imports: [
     BrowserModule,
