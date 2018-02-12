@@ -10,7 +10,8 @@ export class AppService {
   poll: any = {};
   polls: any = [];
   message: string = "";
-  apiUrl: string = 'http://localhost:8080/api/';
+  // apiUrl: string = 'http://localhost:8080/api/';
+  apiUrl: string = 'https://fcc-buildvote-app.herokuapp.com/api/';
   isLoggedIn: boolean = false;
 
   constructor(
