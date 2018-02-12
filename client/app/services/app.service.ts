@@ -21,7 +21,18 @@ export class AppService {
   }
 
   setVote(option){
-    
+    this.http.post(this.apiUrl + 'poll/vote', {
+      _id: this.poll._id,
+      option: option
+    })
+      .subscribe(res => {
+        console.log(res)
+        alert('Thanks for your vote!')
+      },
+      err => {
+        alert('Sorry, already voted once!')
+        console.log(err)
+      });
   }
 
   createPoll(form) {

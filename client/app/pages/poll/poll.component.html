@@ -19,8 +19,7 @@
               <div class="control">
                 <div class="select">
                   <select [(ngModel)]="option" (ngModelChange)="select($event)">
-                    <option>Select an option</option>
-                    <option *ngFor="let option of appService.poll.options">{{option}}</option>
+                    <option *ngFor="let option of appService.poll.options; let i = index" value="{{i}}">{{option}}</option>
                   </select>
                 </div>
               </div>

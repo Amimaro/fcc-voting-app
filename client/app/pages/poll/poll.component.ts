@@ -30,7 +30,6 @@ export class PollComponent implements OnInit {
 
   select(option) {
     this.option = option;
-    alert(this.option);
   }
 
   share() {

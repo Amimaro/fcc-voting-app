@@ -6,6 +6,9 @@ router.route('/')
   .get((...args) => controller.find(...args))
   .post((...args) =>   controller.create(...args));
 
+router.route('/vote')
+  .post((...args) =>   controller.vote(...args));
+
 router.route('/:id')
   .put((...args) => controller.update(...args))
   .get((...args) => controller.findById(...args))
