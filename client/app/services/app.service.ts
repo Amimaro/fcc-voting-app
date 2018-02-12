@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AppService {
 
-  user: any;
+  user: any = {};
   poll: any = {};
   polls: any = [];
   message: string = "";
@@ -71,6 +71,10 @@ export class AppService {
       err => {
         console.log(err)
       });
+  }
+
+  removePoll(id) {
+    return this.http.delete(this.apiUrl + 'poll/' + id)
   }
 
   routeTo(route) {

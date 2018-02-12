@@ -14,6 +14,23 @@ class PollController extends Controller {
     }
   }
 
+  remove(req, res, next) {
+    if (req.isAuthenticated()) {
+      this.facade.remove({
+          _id: req.params.id
+        })
+        .then((doc) => {
+          if (!doc) {
+            return res.sendStatus(404);
+          }
+          return res.sendStatus(204);
+        })
+        .catch(err => next(err));
+    } else {
+      res.redirect('/');
+    }
+  }
+
   findById(req, res, next) {
     return this.facade.findById(req.params.id)
       .then((doc) => {
@@ -21,10 +38,10 @@ class PollController extends Controller {
           return res.sendStatus(404);
         }
         doc.count = [];
-        for(let vote of doc.votes){
+        for (let vote of doc.votes) {
           doc.count.push(0);
         }
-        for(let vote of doc.votes){
+        for (let vote of doc.votes) {
           doc.count[vote.option]++;
         }
         return res.status(200).json(doc);

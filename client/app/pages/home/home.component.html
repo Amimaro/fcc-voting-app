@@ -13,13 +13,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let poll of appService.polls">
+    <tr *ngFor="let poll of appService.polls; let i = index" class="row{{i}}">
       <th>{{poll.name}}</th>
       <td>{{poll.created_at.substring(0, poll.created_at.indexOf('T'))}}</td>
       <td>{{poll._creator.twitter.username}}</td>
       <td>
         <p class="has-text-centered">
           <a class="button is-info" (click)="vote(poll._id)">Vote</a>
+          <a class="button is-danger" (click)="remove(poll._id, i)" *ngIf="appService.isLoggedIn && user._id == poll._creator._id">Remove</a>
         </p>
       </td>
     </tr>
