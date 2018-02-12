@@ -13,8 +13,8 @@ export class CreatePollComponent implements OnInit {
   form: any = {};
 
   constructor(private appService: AppService) {
-    this.form.name = "test";
-    this.form.options = ['a','b'];
+    this.form.name = "";
+    this.form.options = [];
   }
 
   ngOnInit() {
