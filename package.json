@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "main": "server/index.js",
-  "description": "Awesome description",
+  "description": "FreeCodeCamp - Build a Voting App",
   "scripts": {
     "ng": "ng",
     "client": "ng serve -o",
@@ -70,8 +70,9 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
-    "codelyzer": "^4.0.1",
     "browser-sync": "^2.23.6",
+    "codelyzer": "^4.0.1",
+    "enhanced-resolve": "^3.3.0",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
     "jasmine-core": "~2.8.0",
@@ -82,10 +83,10 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "nodemon": "^1.11.0",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.4.2",
-    "nodemon": "^1.11.0"
+    "typescript": "~2.4.2"
   }
 }
