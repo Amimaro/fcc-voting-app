@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 export class AppService {
 
   user: any;
+  poll: any = {};
   polls: any = [];
   message: string = "";
   apiUrl: string = 'http://localhost:8080/api/';
@@ -44,7 +45,7 @@ export class AppService {
   getPoll(id) {
     this.http.get(this.apiUrl + 'poll/' + id)
       .subscribe(res => {
-        console.log(res)
+        this.poll = res;
       },
       err => {
         console.log(err)
