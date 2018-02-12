@@ -73,6 +73,10 @@ export class AppService {
       });
   }
 
+  getPoll2(id) {
+    return this.http.get(this.apiUrl + 'poll/' + id)
+  }
+
   removePoll(id) {
     return this.http.delete(this.apiUrl + 'poll/' + id)
   }

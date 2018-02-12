@@ -13,6 +13,7 @@ import { Chart } from 'chart.js';
 export class PollComponent implements OnInit {
 
   chart: any;
+  poll: any = {};
   option: any;
 
   constructor(private appService: AppService, private route: ActivatedRoute) { }
@@ -20,19 +21,26 @@ export class PollComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.appService.poll = {};
-      this.appService.getPoll(params['id']);
+      this.appService.getPoll(params['id'])
+      this.appService.getPoll2(params['id']).subscribe(res => {
+        console.log('Get Poll')
+        console.log(res)
+        this.poll = res;
+        this.setupChart()
+      },
+        err => {
+          console.log(err)
+        });
     });
-
-    setTimeout(() => { this.setupChart() }, 250)
   }
 
   setupChart() {
     this.chart = new Chart('canvas', {
       type: 'bar',
       data: {
-        labels: this.appService.poll.options,
+        labels: this.poll.options,
         datasets: [{
-          data: this.appService.poll.count,
+          data: this.poll.count,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -60,7 +68,7 @@ export class PollComponent implements OnInit {
   }
 
   addData() {
-    let count = this.appService.poll.count;
+    let count = this.poll.count;
     count[this.option]++
     this.chart.data.datasets[0].data = count;
     this.chart.update();
