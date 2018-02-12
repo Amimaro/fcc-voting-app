@@ -26,11 +26,11 @@
             <a class="navbar-item" (click)="logout()" *ngIf="appService.isLoggedIn">
               Logout
             </a>
-            <a class="navbar-item" (click)="loginGithub()" *ngIf="!appService.isLoggedIn">
+            <a class="navbar-item" (click)="login()" *ngIf="!appService.isLoggedIn">
               <span class="icon">
-                <i class="fa fa-github"></i>
+                <i class="fa fa-twitter"></i>
               </span>
-              <span>Sign in with Github</span>
+              <span>Sign in with Twitter</span>
             </a>
           </div>
         </div>

@@ -12,8 +12,4 @@ const pollSchema = new Schema({
   created_at: Date,
 });
 
-pollSchema.methods.toObjectId = function(id) {
-  return new mongoose.Types.ObjectId(id);
-};
-
 module.exports = mongoose.model('Poll', pollSchema);

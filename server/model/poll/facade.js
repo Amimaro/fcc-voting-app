@@ -20,14 +20,14 @@ class PollFacade extends Facade {
   find(...args) {
     return this.model
       .find(...args)
-      .populate('_creator', 'github.username')
+      .populate('_creator', 'twitter.username')
       .exec();
   }
 
   findById(...args) {
     return this.model
       .findById(...args)
-      .populate('_creator', 'github.username')
+      .populate('_creator', 'twitter.username')
       .exec();
   }
 

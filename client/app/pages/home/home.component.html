@@ -16,7 +16,7 @@
     <tr *ngFor="let poll of appService.polls">
       <th>{{poll.name}}</th>
       <td>{{poll.created_at.substring(0, poll.created_at.indexOf('T'))}}</td>
-      <td>{{poll._creator.github.username}}</td>
+      <td>{{poll._creator.twitter.username}}</td>
       <td>
         <p class="has-text-centered">
           <a class="button is-info" (click)="vote(poll._id)">Vote</a>

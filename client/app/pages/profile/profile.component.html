@@ -2,17 +2,16 @@
   <h1 class="title" style="padding-top: 40px">
     Profile
   </h1>
-  <div class="box" *ngIf="user.github">
+  <div class="box" *ngIf="user.twitter">
     <article class="media">
       <div class="media-content">
         <div class="content">
-          <p class="subtitle">Github Login</p>
+          <p class="subtitle">Twitter Login</p>
           <p><strong>Id:</strong> {{ user._id }}</p>
-          <p><strong>Github Id:</strong> {{ user.github.id }}</p>
-          <p><strong>Name:</strong> {{ user.github.username }}</p>
-          <p><strong>Display Name:</strong> {{ user.github.displayName }}</p>
-          <p><strong>Email:</strong> {{ user.github.email }}</p>
-          <p><strong>Public Repos:</strong> {{ user.github.publicRepos }}</p>
+          <p><strong>Twitter Id:</strong> {{ user.twitter.id }}</p>
+          <p><strong>Token:</strong> {{ user.twitter.token }}</p>
+          <p><strong>Username:</strong> {{ user.twitter.username }}</p>
+          <p><strong>Display Name:</strong> {{ user.twitter.displayName }}</p>
         </div>
       </div>
     </article>

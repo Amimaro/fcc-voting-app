@@ -13,8 +13,8 @@ export class AppComponent {
 
   constructor(private appService: AppService) { }
 
-  loginGithub() {
-    this.appService.loginGithub();
+  login() {
+    this.appService.login();
   }
 
   logout() {
