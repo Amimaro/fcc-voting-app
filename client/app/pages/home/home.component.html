@@ -9,6 +9,7 @@
       <th>Poll Name</th>
       <th>Created at</th>
       <th>By</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +17,11 @@
       <th>{{poll.name}}</th>
       <td>{{poll.created}}</td>
       <td>{{poll.user}}</td>
+      <td>
+        <p class="has-text-centered">
+          <a class="button is-info" (click)="vote(poll._id)">Vote</a>
+        </p>
+      </td>
     </tr>
   </tbody>
 </table>

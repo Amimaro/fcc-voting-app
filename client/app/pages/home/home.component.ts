@@ -15,4 +15,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() { }
 
+  vote(id){
+    alert(id);
+  }
+
 }
