@@ -20,6 +20,10 @@ export class AppService {
     this.getIsLoggedIn();
   }
 
+  setVote(option){
+    
+  }
+
   createPoll(form) {
     this.http.post(this.apiUrl + 'poll', form)
       .subscribe(res => {
