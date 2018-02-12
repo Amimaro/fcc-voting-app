@@ -28,6 +28,7 @@ export class AppService {
       .subscribe(res => {
         console.log(res)
         alert('Thanks for your vote!')
+        this.getPoll(this.poll._id); // update poll count
       },
       err => {
         alert('Sorry, already voted once!')
@@ -40,6 +41,8 @@ export class AppService {
       .subscribe(res => {
         console.log(res)
         this.getPolls()
+        alert('Poll Created Successfully!')
+        this.routeTo(['/'])
       },
       err => {
         console.log(err)
@@ -49,6 +52,7 @@ export class AppService {
   getPolls() {
     this.http.get(this.apiUrl + 'poll')
       .subscribe(res => {
+        console.log('Get Polls')
         console.log(res)
         this.polls = res;
       },
@@ -60,6 +64,8 @@ export class AppService {
   getPoll(id) {
     this.http.get(this.apiUrl + 'poll/' + id)
       .subscribe(res => {
+        console.log('Get Poll')
+        console.log(res)
         this.poll = res;
       },
       err => {

@@ -19,15 +19,19 @@ export class PollComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      this.appService.poll = {};
       this.appService.getPoll(params['id']);
     });
 
+    setTimeout(() => { this.setupChart() }, 250)
+  }
+
+  setupChart() {
     this.chart = new Chart('canvas', {
       type: 'bar',
       data: {
         labels: this.appService.poll.options,
         datasets: [{
-          label: '# of Votes',
           data: this.appService.poll.count,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
@@ -47,9 +51,19 @@ export class PollComponent implements OnInit {
               beginAtZero: true
             }
           }]
-        }
+        },
+        legend: {
+          display: false
+        },
       }
     });
+  }
+
+  addData() {
+    let count = this.appService.poll.count;
+    count[this.option]++
+    this.chart.data.datasets[0].data = count;
+    this.chart.update();
   }
 
   vote() {
@@ -57,6 +71,7 @@ export class PollComponent implements OnInit {
       alert('Invalid Option!');
     } else {
       this.appService.setVote(this.option);
+      // this.addData();
     }
   }
 

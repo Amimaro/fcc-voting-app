@@ -14,6 +14,24 @@ class PollController extends Controller {
     }
   }
 
+  findById(req, res, next) {
+    return this.facade.findById(req.params.id)
+      .then((doc) => {
+        if (!doc) {
+          return res.sendStatus(404);
+        }
+        doc.count = [];
+        for(let vote of doc.votes){
+          doc.count.push(0);
+        }
+        for(let vote of doc.votes){
+          doc.count[vote.option]++;
+        }
+        return res.status(200).json(doc);
+      })
+      .catch(err => next(err));
+  }
+
   vote(req, res, next) {
     let votes = {
       option: req.body.option,
