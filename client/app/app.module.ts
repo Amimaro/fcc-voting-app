@@ -11,6 +11,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AppService } from './services/app.service';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CreatePollComponent } from './pages/create-poll/create-poll.component';
+import { VoteComponent } from './vote/vote.component';
 
 const appRoutes: Routes = [
   {
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     HomeComponent,
     NotFoundComponent,
     ProfileComponent,
-    CreatePollComponent
+    CreatePollComponent,
+    VoteComponent
   ],
   imports: [
     BrowserModule,
