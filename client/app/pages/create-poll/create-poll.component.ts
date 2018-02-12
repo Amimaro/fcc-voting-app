@@ -18,6 +18,15 @@ export class CreatePollComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appService.getSession().subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("Error occured");
+        console.log(err);
+        this.appService.routeTo(['/'])
+      });
   }
 
   addOption() {
