@@ -60,7 +60,7 @@ class PollController extends Controller {
         _id: req.body._id,
         'votes.addr': {
           $not: {
-            $exists: '::ffff:127.0.0.1'
+            $exists: addr
           }
         }
       }, {
