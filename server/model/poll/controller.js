@@ -58,11 +58,11 @@ class PollController extends Controller {
       votes.user = req.user._id
     this.facade.update({
         _id: req.body._id,
-        'votes.addr': {
-          $not: {
-            $exists: addr
-          }
-        }
+        // 'votes.addr': {
+        //   $not: {
+        //     $exists: addr
+        //   }
+        // }
       }, {
         $push: {
           votes: votes
