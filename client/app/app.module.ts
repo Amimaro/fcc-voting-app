@@ -15,7 +15,7 @@ import { PollComponent } from './pages/poll/poll.component';
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
   },
   {
