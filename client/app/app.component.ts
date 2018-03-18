@@ -10,8 +10,13 @@ import { AppService } from './services/app.service';
 export class AppComponent {
 
   title = 'app';
+  isNavBar: boolean = false;
 
   constructor(public appService: AppService) { }
+
+  toggleNavBar() {
+    return this.isNavBar;
+  }
 
   login() {
     this.appService.login();
