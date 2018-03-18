@@ -4,43 +4,37 @@
   </h1>
   <div align="center">
     <div class="box">
-      <article class="media">
-        <div class="media-content">
-          <div class="content">
-            <div class="field">
-              <label class="label">Poll Name</label>
-              <div class="control">
-                <h3 class="subtitle">{{appService.poll.name}}</h3>
-              </div>
+      <div class="columns">
+        <div class="column">
+          <div class="field">
+            <label class="label">Poll Name</label>
+            <div class="control">
+              <h3 class="subtitle">{{appService.poll.name}}</h3>
             </div>
-            <br>
-            <div class="field">
-              <label class="label">Options</label>
-              <div class="control">
-                <div class="select">
-                  <select [(ngModel)]="option" (ngModelChange)="select($event)" style="width: 300px">
-                    <option *ngFor="let option of appService.poll.options; let i = index" value="{{i}}">{{option}}</option>
-                  </select>
-                </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label">Options</label>
+            <div class="control">
+              <div class="select">
+                <select [(ngModel)]="option" (ngModelChange)="select($event)" style="width: 100%">
+                  <option *ngFor="let option of appService.poll.options; let i = index" value="{{i}}">{{option}}</option>
+                </select>
               </div>
             </div>
           </div>
-        </div>
-        <div class="media-left">
-          <div style="width: 400px">
-            <canvas id="canvas">{{ chart }}</canvas>
-            <div class="field is-grouped pull-right">
-              <div class="control">
-                <a class="button is-link" (click)="vote()">Submit Vote</a>
-                <a class="button is-primary" (click)="share()">
-                <span class="icon"><i class="fa fa-twitter"></i></span>
-                <span>Share on Twitter</span>
-              </a>
-              </div>
-            </div>
+          <div class="control">
+            <a class="button is-link" (click)="vote()">Submit Vote</a>
+            <a class="button is-primary" (click)="share()">
+              <span class="icon"><i class="fa fa-twitter"></i></span>
+              <span>Share on Twitter</span>
+            </a>
           </div>
         </div>
-      </article>
+        <div class="column">
+          <canvas id="canvas">{{ chart }}</canvas>
+        </div>
+      </div>
     </div>
   </div>
 </div>
