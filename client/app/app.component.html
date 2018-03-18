@@ -11,22 +11,22 @@
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item" [routerLink]="['/home']">
+            <a class="navbar-item" [routerLink]="['/home']" [routerLinkActive]="['is-active']">
               Home
             </a>
-            <a class="navbar-item" [routerLink]="['/newpoll']" *ngIf="appService.isLoggedIn">
+            <a class="navbar-item" [routerLink]="['/newpoll']" *ngIf="appService.isLoggedIn" [routerLinkActive]="['is-active']">
               <span class="icon">
                 <i class="fa fa-plus"></i>
               </span>
               <span>Create New Poll</span>
             </a>
-            <a class="navbar-item" [routerLink]="['/profile']" *ngIf="appService.isLoggedIn">
+            <a class="navbar-item" [routerLink]="['/profile']" *ngIf="appService.isLoggedIn" [routerLinkActive]="['is-active']">
               Profile
             </a>
-            <a class="navbar-item" (click)="logout()" *ngIf="appService.isLoggedIn">
+            <a class="navbar-item" (click)="logout()" *ngIf="appService.isLoggedIn" [routerLinkActive]="['is-active']">
               Logout
             </a>
-            <a class="navbar-item" (click)="login()" *ngIf="!appService.isLoggedIn">
+            <a class="navbar-item" (click)="login()" *ngIf="!appService.isLoggedIn" [routerLinkActive]="['is-active']">
               <span class="icon">
                 <i class="fa fa-twitter"></i>
               </span>
