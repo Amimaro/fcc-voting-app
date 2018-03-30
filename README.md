@@ -1,6 +1,6 @@
-## FreeCodeCamp - Backend Challenges
-## Dynamic Web Application Projects: [Build a Voting App](https://www.freecodecamp.org/challenges/build-a-voting-app)
 ## fcc-voting-app
+## freeCodeCamp - Backend Challenges
+## Dynamic Web Application Projects: [Build a Voting App](https://www.freecodecamp.org/challenges/build-a-voting-app)
 
 ### Getting started
 
